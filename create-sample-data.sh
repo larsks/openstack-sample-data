@@ -9,12 +9,12 @@ project2_managers='user6'
 
 set -e
 
-openstack role create manager
+openstack role create --or-show manager
 
 for user in {1..6}; do
     openstack user create --or-show \
         --password secret${user} \
-        --email user{$user}@example.com \
+        --email user${user}@example.com \
         --enable \
         user${user}
 done
